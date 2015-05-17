@@ -57,8 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDatabasePlugin.cs" />
     <Compile Include="IPlugin.cs" />
-    <Compile Include="IProjDBManager.cs" />
+    <Compile Include="IProjDatabase.cs" />
     <Compile Include="IPanelPlugin.cs" />
     <Compile Include="ITask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

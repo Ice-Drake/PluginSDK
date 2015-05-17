@@ -4,11 +4,24 @@ using System.Text;
 
 namespace PluginSDK
 {
+    /// <summary>
+    /// All task management plugins should implement this interface and IProjDatabase.
+    /// </summary>
     public interface ITask
     {
-        string Summary { get; set; }
-        DateTime StartDate { get; set; }
-        DateTime DueDate { get; set; }
-        bool Complete { get; set; }
+        /// <returns>Returns the ID of the task.</returns>
+        uint ID { get; }
+
+        /// <returns>Returns the summary of the task.</returns>
+        string Summary { get; }
+
+        /// <returns>Returns the start date of the task.</returns>
+        DateTime StartDate { get; }
+
+        /// <returns>Returns the due date of the task.</returns>
+        DateTime DueDate { get; }
+
+        /// <returns>Returns whether the task is completed or not.</returns>
+        bool Complete { get; }
     }
 }
