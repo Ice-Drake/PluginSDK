@@ -21,7 +21,9 @@ namespace PluginSDK
         /// <returns>Returns the due date of the task.</returns>
         DateTime DueDate { get; }
 
-        /// <returns>Returns whether the task is completed or not.</returns>
-        bool Complete { get; }
+        /// <summary>
+        /// Property for task status
+        /// </summary>
+        bool Complete { get; set; }
     }
 }
