@@ -11,12 +11,21 @@ namespace PluginSDK
     /// </summary>
     public interface IPlugin
     {
+        /// <summary>
+        /// Property for plugin author's name.
+        /// </summary>
         /// <returns>Returns the name of the author who created the plugin.</returns>
         string AuthorName { get; }
 
+        /// <summary>
+        /// Property for plugin name.
+        /// </summary>
         /// <returns>Returns the name of the plugin.</returns>
         string PluginName { get; }
 
+        /// <summary>
+        /// Property for plugin version.
+        /// </summary>
         /// <returns>Returns the version of the plugin.</returns>
         string PluginVersion { get; }
     }

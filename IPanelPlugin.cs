@@ -10,6 +10,9 @@ namespace PluginSDK
     /// </summary>
     public interface IPanelPlugin : IPlugin
     {
+        /// <summary>
+        /// Property for panel plugin name.
+        /// </summary>
         /// <returns>Returns the name for the panel of the plugin.</returns>
         /// <remarks>This name will be used as the name of menu item generated for this plugin.</remarks>
         string PanelName { get; }

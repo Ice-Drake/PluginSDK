@@ -11,7 +11,7 @@ namespace PluginSDK
 
     public class StatusArgs : EventArgs
     {
-        public ITaskStatus Status { get; internal set; }
+        public ITaskStatus Status { get; set; }
 
         public StatusArgs(ITaskStatus status)
         {
