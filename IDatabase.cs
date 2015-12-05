@@ -6,9 +6,9 @@ using System.Text;
 namespace PluginSDK
 {
     /// <summary>
-    ///  All panel plugins that use a significantly large database should implement this interface.
+    ///  All plugins that use a significantly large database should implement this interface.
     /// </summary>
-    public interface IDatabasePlugin : IPanelPlugin
+    public interface IDatabase
     {
         /// <summary>
         /// Load the database associated to the plugin.

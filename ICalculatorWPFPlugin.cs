@@ -6,14 +6,19 @@ namespace PluginSDK
     /// <summary>
     ///  All calculator plugins using Windows Presentation Foundation should implement this abstract class.
     /// </summary>
-    public abstract class ICalculatorWPFPlugin : UserControl, ICalculatorPlugin
+    public abstract class ICalculatorWPFPlugin : UserControl, ICalculator, IPlugin
     {
+        public ICalculatorWPFPlugin()
+        {
+            
+        }
+
         /// <summary>
         /// Shared data with the calculator and all its plugin.
         /// </summary>
         protected SharedData sharedData;
 
-        #region Method from the ICalculatorPlugin interface
+        #region Method from the ICalculator interface
 
         /// <summary>
         /// Property for plugin selection name.

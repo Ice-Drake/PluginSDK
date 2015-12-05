@@ -4,32 +4,8 @@ using System.Windows.Forms;
 
 namespace PluginSDK
 {
-    /// <summary>
-    ///  All calculator plugins using Windows Forms should implement this abstract class.
-    /// </summary>
-    public abstract class ICalculatorFormPlugin : UserControl, ICalculator, IPlugin
+    public abstract class IChatFormPlugin : IChatFormControl, IPlugin
     {
-        public ICalculatorFormPlugin()
-        {
-            MaximumSize = new Size(503, 422);
-            Location = new Point(6, 19);
-        }
-
-        /// <summary>
-        /// Shared data with the calculator and all its plugin.
-        /// </summary>
-        protected SharedData sharedData;
-
-        #region Method from the ICalculator interface
-
-        /// <summary>
-        /// Property for plugin selection name.
-        /// </summary>
-        /// <returns>Returns the selection name of the plugin.</returns>
-        public abstract string SelectionName { get; }
-
-        #endregion
-
         #region Methods from the IPlugin interface
 
         /// <summary>

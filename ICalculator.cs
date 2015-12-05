@@ -5,7 +5,7 @@ namespace PluginSDK
     /// <summary>
     ///  All calculator plugins will implement this interface.
     /// </summary>
-    public interface ICalculatorPlugin : IPlugin
+    public interface ICalculator
     {
         /// <summary>
         /// Property for plugin selection name.
