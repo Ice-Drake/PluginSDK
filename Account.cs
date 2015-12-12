@@ -7,17 +7,24 @@ namespace PluginSDK
 {
     public class Account
     {
-        public string Username { get; private set; }
+        public string Server { get; private set; }
+        public string Username { get; set; }
         public string Password { get; set; }
-        public string Domain { get; private set; }
-        public string Owner { get; private set; }
+        public string Domain { get; set; }
+        public string OwnerID { get; private set; }
 
-        Account(string username, string password, string domain, string owner)
+        public Account(string server, string ownerID)
         {
-            Username = username;
-            Password = password;
-            Domain = domain;
-            Owner = owner;
+            Server = server;
+            OwnerID = ownerID;
+        }
+
+        public bool canLog()
+        {
+            if (Username.Length != 0 && Password.Length != 0 && Domain.Length != 0)
+                return true;
+            else
+                return false;
         }
     }
 }

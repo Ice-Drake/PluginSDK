@@ -7,11 +7,30 @@ namespace PluginSDK
 {
     public abstract class IChatWPFPlugin : UserControl, IChatSource, IPlugin
     {
+        private Color textColor;
+
         public IChatWPFPlugin()
         {
             Muted = false;
             Status = ChatStatus.Offline;
         }
+
+        /// <summary>
+        /// Connect to this chat source.
+        /// </summary>
+        public abstract bool connect();
+
+        /// <summary>
+        /// Disconnect from this chat source.
+        /// </summary>
+        public abstract bool disconnect();
+
+        /// <summary>
+        /// Setup the account to be used for this chat source.
+        /// </summary>
+        /// <param name="account">Account to be used for connecting and discconnecting to this chat source.</param>
+        /// <returns>True if successful.</returns>
+        public abstract bool setup(Account account);
 
         #region Method from the IChatSource interface
 
@@ -27,7 +46,19 @@ namespace PluginSDK
         /// </summary>
         /// <returns>Returns the text color used for contents from this chat source in ALL tab.</returns>
         /// <remarks>This text color will be used for contents from this chat source in ALL tab.</remarks>
-        public abstract Color TextColor { get; }
+        public Color TextColor
+        {
+            get
+            {
+                return textColor;
+            }
+            set
+            {
+                textColor = value;
+                if (TextColorChanged != null)
+                    TextColorChanged(this, new PropertyChangedEventArgs("TextColor"));
+            }
+        }
 
         /// <summary>
         /// Property for the muting contents from this chat source from the ALL tab.
@@ -51,7 +82,7 @@ namespace PluginSDK
         /// <summary>
         /// An event that must be triggered whenever TextColor is changed.
         /// </summary>
-        public abstract event PropertyChangedEventHandler TextColorChanged;
+        public event PropertyChangedEventHandler TextColorChanged;
 
         /// <summary>
         /// An event that must be triggered whenever Status is changed.
@@ -64,22 +95,6 @@ namespace PluginSDK
         /// <param name="message">Message to be send.</param>
         /// <param name="userID">User whose message is originated from.</param>
         public abstract void chat(string message, string userID);
-
-        /// <summary>
-        /// Connect to this chat source.
-        /// </summary>
-        public abstract bool connect();
-
-        /// <summary>
-        /// Disconnect from this chat source.
-        /// </summary>
-        public abstract bool disconnect();
-
-        /// <summary>
-        /// Setup the account to be used for this chat source.
-        /// </summary>
-        /// <param name="account">Account to be used for connecting and discconnecting to this chat source.</param>
-        public abstract void setup(Account account);
 
         #endregion
 
@@ -104,5 +119,6 @@ namespace PluginSDK
         public abstract string PluginVersion { get; }
 
         #endregion
+
     }
 }

@@ -62,21 +62,5 @@ namespace PluginSDK
         /// <param name="message">Message to be send.</param>
         /// <param name="userID">User whose message is originated from.</param>
         void chat(string message, string userID);
-
-        /// <summary>
-        /// Connect to this chat source.
-        /// </summary>
-        bool connect();
-
-        /// <summary>
-        /// Disconnect from this chat source.
-        /// </summary>
-        bool disconnect();
-
-        /// <summary>
-        /// Setup the account to be used for this chat source.
-        /// </summary>
-        /// <param name="account">Account to be used for connecting and discconnecting to this chat source.</param>
-        void setup(Account account);
     }
 }

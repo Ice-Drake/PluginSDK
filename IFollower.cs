@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace PluginSDK
 {
-    public delegate void OutgoingMessageEventHandler(object sender);
+    public delegate void OutgoingMessageEventHandler(IFollower sender, IChatSource source);
 
     /// <summary>
     ///  All follower plugins will implement this interface indirectly through IFollowerPlugin.
@@ -31,15 +31,21 @@ namespace PluginSDK
         /// </summary>
         /// <param name="line">A line of speech to follower.</param>
         /// <param name="userID">The user whose speech is originating from.</param>
+        /// <param name="chatSource">The chat source of where speech is originating from.</param>
         /// <remarks>This will be called when the conversation is directed to this follower.
         /// Note that the default program user ID is "User".</remarks>
-        void interpret(string line, string userID);
+        void interpret(string line, string userID, IChatSource source);
 
         /// <summary>
         /// Something that the follower must say either in response to the user question, or not.
         /// </summary>
         /// <remarks>This will be called when the OutgoingSpeech event is triggered.</remarks>
         string say();
+
+        /// <summary>
+        /// Start up the follower.
+        /// </summary>
+        void start();
 
         /// <summary>
         /// An event that is triggered when the follower has something to say.
