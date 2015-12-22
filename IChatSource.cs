@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace PluginSDK
 {
-    public delegate void IncomingMessageEventHandler(IChatSource sender, string user, string message);
+    public delegate void IncomingMessageEventHandler(IChatSource source, string user, string message);
 
     public enum ChatStatus { Available, Away, Busy, Offline };
 

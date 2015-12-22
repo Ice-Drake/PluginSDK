@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.ComponentModel;
 
 namespace PluginSDK
@@ -11,6 +12,13 @@ namespace PluginSDK
     /// </summary>
     public interface IFollower
     {
+        /// <summary>
+        /// Property for the font color used for contents in this chat source.
+        /// </summary>
+        /// <returns>Returns the font color used for contents in this chat source.</returns>
+        /// <remarks>This font color will be used for contents in this chat source.</remarks>
+        Color FontColor { get; }
+
         /// <summary>
         /// Property for the list of keywords that can be used as reference to this follower in a conversation.
         /// </summary>
@@ -31,16 +39,24 @@ namespace PluginSDK
         /// </summary>
         /// <param name="line">A line of speech to follower.</param>
         /// <param name="userID">The user whose speech is originating from.</param>
-        /// <param name="chatSource">The chat source of where speech is originating from.</param>
+        /// <param name="source">The chat source of where speech is originating from.</param>
         /// <remarks>This will be called when the conversation is directed to this follower.
         /// Note that the default program user ID is "User".</remarks>
         void interpret(string line, string userID, IChatSource source);
 
         /// <summary>
+        /// Join a chat source.
+        /// </summary>
+        /// <param name="source">The chat source of whom is joining in.</param>
+        /// <remarks>This must be called by IChatSource before this follower can initiate a conversation.</remarks>
+        void join(IChatSource source);
+
+        /// <summary>
         /// Something that the follower must say either in response to the user question, or not.
         /// </summary>
+        /// <param name="source">The chat source of who is saying in.</param>
         /// <remarks>This will be called when the OutgoingSpeech event is triggered.</remarks>
-        string say();
+        string say(IChatSource source);
 
         /// <summary>
         /// Start up the follower.
