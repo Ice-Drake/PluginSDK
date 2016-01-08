@@ -60,12 +60,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDatabase.cs" />
+    <Compile Include="IJournal.cs" />
     <Compile Include="ICalculatorWPFPlugin.cs" />
     <Compile Include="ICalculatorFormPlugin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ICalculatorPlugin.cs" />
     <Compile Include="IDatabasePlugin.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="IJournalCollection.cs" />
+    <Compile Include="IJournalCollectionPlugin.cs" />
     <Compile Include="IProfessionPlugin.cs" />
     <Compile Include="IPlugin.cs" />
     <Compile Include="IProjDatabase.cs" />
