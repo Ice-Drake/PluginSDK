@@ -45,8 +45,8 @@ namespace PluginSDK
         /// Property for the tags associated to this journal entry.
         /// </summary>
         /// <returns>Returns the tags associated to this journal entry.</returns>
-        /// <remarks>This list is used to search for entry other than by its subject.</remarks>
-        public List<string> Tags { get; private set; }
+        /// <remarks>This set is used to search for entry other than by its subject.</remarks>
+        public HashSet<string> Tags { get; private set; }
 
         /// <summary>
         /// An event that must be triggered whenever this entry has been modified and saved.
@@ -57,7 +57,7 @@ namespace PluginSDK
         {
             UID = uid;
             DateCreated = dateCreated;
-            Tags = new List<string>();
+            Tags = new HashSet<string>();
         }
 
         public virtual void save()
