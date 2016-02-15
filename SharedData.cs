@@ -33,8 +33,8 @@ namespace PluginSDK
         /// Retrieve the value with the supplied variable name.
         /// </summary>
         /// <param name="varName">Stored variable name.</param>
-        /// <returns>Returns the value of the supplied variable name. If the supplied variable name is invalid, return null.</returns>
-        public object retrieve(string varName)
+        /// <returns>Returns the numeral value of the supplied variable name. If the supplied variable name is invalid, return null.</returns>
+        public Numeral retrieve(string varName)
         {
             if (data.ContainsKey(varName))
                 return data[varName];
