@@ -4,11 +4,11 @@ using System.Collections.Generic;
 namespace PluginSDK
 {
     /// <summary>
-    ///  This class represents the shared data used by Calculator and all its ICalculatorPlugin.
+    ///  This class represents the shared data used by Calculator and all its ICalculator plugins.
     /// </summary>
     public class SharedData
     {
-        private static SortedList<string, object> data;
+        private static SortedList<string, Numeral> data;
 
         /// <summary>
         /// Initializes a new instance of the SharedData class along with the initialization of a common shared data if it hasn't been done so already.
@@ -17,7 +17,7 @@ namespace PluginSDK
         {
             if (data == null)
             {
-                data = new SortedList<string, object>();
+                data = new SortedList<string, Numeral>();
             }
         }
 
@@ -48,7 +48,7 @@ namespace PluginSDK
         /// <param name="varName">Variable name.</param>
         /// <param name="value">Variable value.</param>
         /// <remarks>If the supplied variable name already exists, the original value of the variable will be overwritten.</remarks>
-        public void store(string varName, object value)
+        public void store(string varName, Numeral value)
         {
             if (data.ContainsKey(varName))
                 data[varName] = value;
