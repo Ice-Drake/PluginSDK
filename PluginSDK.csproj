@@ -61,26 +61,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
     <Compile Include="Expression.cs" />
     <Compile Include="ICalculatorWPFPlugin.cs" />
     <Compile Include="ICalculatorFormPlugin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ICalculator.cs" />
-    <Compile Include="IChatFormControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="IChatFormPlugin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="IChatSource.cs" />
-    <Compile Include="IChatSourceAccountManager.cs" />
-    <Compile Include="IChatSourceForFollower.cs" />
-    <Compile Include="IChatWPFPlugin.cs" />
     <Compile Include="IDatabase.cs" />
-    <Compile Include="IFollowerPlugin.cs" />
-    <Compile Include="IFollower.cs" />
     <Compile Include="IPlugin.cs" />
     <Compile Include="IProjectManager.cs" />
     <Compile Include="ITaskManagementPlugin.cs" />
