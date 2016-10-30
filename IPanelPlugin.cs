@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PluginSDK
@@ -7,7 +5,7 @@ namespace PluginSDK
     /// <summary>
     ///  All panel plugins must implement this interface.
     /// </summary>
-    public interface IPanelPlugin : IPlugin
+    public interface IPanelPlugin
     {
         /// <summary>
         /// Property for panel plugin name.
